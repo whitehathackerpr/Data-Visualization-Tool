@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analyze Data</title>
+</head>
+<body>
+    <h1>Data Summary</h1>
+    {{ summary|safe }}
+    <form action="/visualize" method="post">
+        <input type="hidden" name="filename" value="{{ filename }}">
+        <label for="column_x">X-Axis:</label>
+        <select name="column_x" id="column_x">
+            {% for column in columns %}
+                <option value="{{ column }}">{{ column }}</option>
+            {% endfor %}
+        </select>
+        <label for="column_y">Y-Axis:</label>
+        <select name="column_y" id="column_y">
+            {% for column in columns %}
+                <option value="{{ column }}">{{ column }}</option>
+            {% endfor %}
+        </select>
+        <label for="chart_type">Chart Type:</label>
+        <select name="chart_type" id="chart_type">
+            <option value="scatter">Scatter Plot</option>
+            <option value="bar">Bar Chart</option>
+            <option value="hist">Histogram</option>
+        </select>
+        <button type="submit">Generate Chart</button>
+    </form>
+</body>
+</html>
