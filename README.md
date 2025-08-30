@@ -33,7 +33,7 @@ Clone the repository:
 bash
 Copy
 Edit
-git clone https://github.com/your-username/data-visualization-tool.git
+git clone https://github.com/whitehathackerpr/data-visualization-tool.git
 cd data-visualization-tool
 Set up a virtual environment (optional but recommended):
 
